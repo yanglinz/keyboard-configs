@@ -45,10 +45,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Nav and Media Layer
     [2] = LAYOUT(
-        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,                    KC_TRNS,  KC_TRNS,   KC_TRNS,    KC_TRNS,   KC_TRNS,      KC_MINS,
-        KC_TRNS,  KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,                      KC_Y,  KC_U,   KC_I,    KC_O,   KC_P,      KC_BSPC,
-        KC_TRNS,  KC_LCTL, KC_LALT, KC_LGUI, KC_LSHIFT, KC_NO,                      KC_H,  HOME_J, HOME_K,  HOME_L, HOME_SCLN, KC_QUOT,
-        KC_TRNS,  KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,                      KC_N,  KC_M,   KC_COMM, KC_DOT, KC_SLSH,   KC_RSFT,
+        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,                    KC_TRNS,  KC_TRNS,   KC_TRNS,    KC_TRNS,   KC_TRNS,      KC_TRNS,
+        KC_TRNS,  KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,                      KC_AGAIN, KC_PASTE,   KC_COPY,    KC_CUT,   KC_UNDO,      KC_TRNS,
+        KC_TRNS,  KC_LCTL, KC_LALT, KC_LGUI, KC_LSHIFT, KC_NO,                      KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT, KC_CAPSLOCK, KC_TRNS,
+        KC_TRNS,  KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,                      KC_HOME,  KC_PGDN,   KC_PGUP, KC_END, KC_INS,   KC_TRNS,
                                              KC_LGUI,   MO(2),   KC_SPC,    KC_ENT, MO(1), KC_RALT
     ),
 };
