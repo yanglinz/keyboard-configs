@@ -1,0 +1,197 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+
+// Mouse emulation
+#undef ZMK_POINTING_DEFAULT_MOVE_VAL
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800 // default: 600
+#undef ZMK_POINTING_DEFAULT_SCRL_VAL
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20 // default: 10
+
+// Layer names
+#define L_DEF 0
+#define L_SYM 1
+#define L_NAV 2
+#define L_NUM 3
+#define L_GAME 4
+
+/*               58 KEY MATRIX / LAYOUT MAPPING
+  ╭────────────────────────────┬────────────────────────────╮
+  │  0   1   2   3   4   5     │      6   7   8   9  10  11 │
+  │ 12  13  14  15  16  17     │     18  19  20  21  22  23 │
+  │ 24  25  26  27  28  29  30 │ 31  32  33  34  35  36  37 │
+  │ 38  39  40  41  42  43  44 │ 45  46  47  48  49  50  51 │
+  ╰───────────╮ 52  53  54  55 │ 56  57  58  59 ╭───────────╯
+              ╰────────────────┴────────────────╯
+*/
+
+// Opposing key mappings and tap hold timings
+#define LEFT_KEYS 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30 38 39 40 41 42 43 44
+#define RIGHT_KEYS 6 7 8 9 10 11 18 19 20 21 22 23 31 32 33 34 35 36 37 45 46 47 48 49 50 51
+#define LEFT_THUMBS 52 53 54 55
+#define RIGHT_THUMBS 56 57 58 59
+
+#define TAPPING_TERM_MS 270
+#define QUICK_TAP_MS 175
+#define REQUIRE_PRIOR_IDLE_MS 130
+
+// Caps words
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BACKSPACE>;
+};
+
+/ {
+    behaviors {
+        // thumb tap holds
+        tml: thumb_hold_tap_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+            hold-trigger-key-positions = <RIGHT_THUMBS RIGHT_KEYS LEFT_KEYS>;
+            hold-trigger-on-release;
+        };
+        tmr: thumb_hold_tap_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+            hold-trigger-key-positions = <LEFT_THUMBS RIGHT_KEYS LEFT_KEYS>;
+            hold-trigger-on-release;
+        };
+
+        // home row mods
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+            hold-trigger-key-positions = <RIGHT_KEYS LEFT_THUMBS RIGHT_THUMBS>;
+            hold-trigger-on-release;
+        };
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_MS>;
+            hold-trigger-key-positions = <LEFT_KEYS LEFT_THUMBS RIGHT_THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        // sticky keys
+        skq: sticky_quick_release {
+          compatible = "zmk,behavior-sticky-key";
+          #binding-cells = <1>;
+          bindings = <&kp>;
+          release-after-ms = <1000>;
+          quick-release;
+          ignore-modifiers;
+        };
+
+        // tap dance
+        td_caps: tap_dance_left_thumb {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&skq LSHIFT>, <&caps_word>, <&kp CAPSLOCK>;
+        };
+        td_nums: tap_dance_right_thumb {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&skq RSHIFT>, <&tog L_NUM>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        // When both layer 1 and 2 (Symbols and Navigation) are pressed, enabled layer 3 (Numbers)
+        tri_layer {
+            if-layers = <L_SYM L_NAV>;
+            then-layer = <L_NUM>;
+        };
+    };
+
+// The keybindings are an amalgamation of the following resources:
+// https://github.com/manna-harbour/miryoku
+// https://github.com/urob/zmk-config
+// https://getreuer.info/posts/keyboards/symbol-layer/index.html
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Default Layer";
+            bindings = <
+&kp GRAVE  &kp N1        &kp N2       &kp N3       &kp N4         &kp N5                                 &kp N6     &kp N7         &kp N8       &kp N9       &kp N0          &kp EQUAL
+&kp TAB    &kp Q         &kp W        &kp E        &kp R          &kp T                                  &kp Y      &kp U          &kp I        &kp O        &kp P           &kp BACKSPACE
+&kp ESC    &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHIFT F  &kp G           &trans     &kp C_MUTE  &kp H      &hmr RSHIFT J  &hmr RGUI K  &hmr RALT L  &hmr RCTL SEMI  &kp SQT
+&kp LSHFT  &kp Z         &kp X        &kp C        &kp V          &kp B           &kp LBKT   &kp RBKT    &kp N      &kp M          &kp COMMA    &kp DOT      &kp FSLH        &td_caps
+                                      &kp LALT     &td_nums       &tml L_NAV TAB  &kp SPACE  &kp RET     &mo L_SYM  &td_caps       &kp LGUI
+            >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+
+        symbol_layer {
+            display-name = "Symbol Layer";
+            bindings = <
+&trans  &trans       &trans     &trans     &trans     &trans                        &trans     &trans     &trans    &trans     &trans             &trans
+&trans  &kp GRAVE    &kp TILDE  &kp HASH   &kp AMPS   &kp PIPE                      &kp CARET  &kp LBRC   &kp RBRC  &kp LBKT   &kp RBKT           &kp DEL
+&trans  &kp EXCL     &kp UNDER  &kp COLON  &kp EQUAL  &kp DOLLAR    &trans  &trans  &kp AT     &kp LPAR   &kp RPAR  &kp UNDER  &kp SEMI           &trans
+&trans  &kp PERCENT  &kp QMARK  &kp STAR   &kp PLUS   &kp BSLH      &trans  &trans  &kp FSLH   &kp MINUS  &kp LT    &kp GT     &kp DOUBLE_QUOTES  &trans
+                                   &trans  &trans     &trans        &trans  &trans  &trans     &trans     &trans
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_NEXT C_PREV>;
+        };
+
+        nav_and_media_layer {
+            display-name = "Navigation and Media Layer";
+            bindings = <
+&trans  &trans     &trans    &trans    &trans      &trans                   &trans         &trans          &trans         &trans        &trans         &tog L_GAME
+&trans  &none      &none     &none     &none       &none                    &kp C_AC_REDO  &kp C_AC_PASTE  &kp C_AC_COPY  &kp C_AC_CUT  &kp C_AC_UNDO  &kp DEL
+&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHIFT  &none   &trans   &trans  &kp LEFT       &kp DOWN        &kp UP         &kp RIGHT     &kp CAPSLOCK   &trans
+&trans  &none      &none     &none     &none       &none   &trans   &trans  &kp HOME       &kp PG_DN       &kp PG_UP      &kp END       &kp INS        &trans
+                             &trans    &trans      &trans  &trans   &trans  &trans         &trans          &trans
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        number_layer {
+            display-name = "Number Layer";
+            bindings = <
+&trans  &trans     &trans    &trans    &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp N1     &kp N2    &kp N3    &kp N4      &kp N5                  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
+&trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHIFT  &trans  &trans  &trans  &kp N0  &kp N4  &kp N5  &kp N6  &trans  &trans
+&trans  &trans     &trans    &trans    &trans      &trans  &trans  &trans  &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
+                             &trans    &trans      &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        gaming_layer {
+            display-name = "Gaming Layer";
+            bindings = <
+&kp ESC    &kp N1  &kp N2  &kp N3     &kp N4     &kp N5                   &none  &none  &none  &none  &none  &tog L_GAME
+&kp TAB    &kp Q   &kp W   &kp E      &kp R      &kp T                    &none  &none  &none  &none  &none  &none
+&kp LSHFT  &kp A   &kp S   &kp D      &kp F      &kp G      &none  &none  &none  &none  &none  &none  &none  &none
+&kp LCTRL  &kp Z   &kp X   &kp C      &kp V      &kp V      &none  &none  &none  &none  &none  &none  &none  &none
+                           &kp SPACE  &kp SPACE  &kp SPACE  &none  &none  &none  &none  &none
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+        };
+    };
+};

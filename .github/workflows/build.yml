@@ -1,0 +1,8 @@
+name: Build ZMK firmware
+on: [push]
+
+jobs:
+  build_lotus58:
+    uses: ./.github/workflows/zmk-build-user-config.yml
+    with:
+      working_directory: ./lotus58
