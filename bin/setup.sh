@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 QMK_FIRMWARE_REF="0.31.9"
 
 function setup_qmk_repo() {
