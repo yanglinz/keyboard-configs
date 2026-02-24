@@ -7,11 +7,15 @@ export SKIP_FLASHING_SUPPORT=1
 function copy_source() {
   rm -rf qmk_firmware/keyboards/silakka54
   cp -r silakka54 qmk_firmware/keyboards/
+
+  rm -rf qmk_firmware/keyboards/splitkb/halcyon/kyria
+  cp -r kyria qmk_firmware/keyboards/splitkb/halcyon/
 }
 
 function compile() {
   cd qmk_firmware
-  util/docker_build.sh silakka54:default
+  # TODO: add logic to compare diff against master
+  # util/docker_build.sh silakka54:default
   cd -
 }
 
