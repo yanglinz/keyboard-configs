@@ -2,7 +2,7 @@
 
 This is a repo of my personal collection of firmware (QMK and ZMK) and hardware accessories for my ergonomic keyboards.
 
-| Keyboard | |
+| Name | Image |
 | :--- | :--- |
 | [Kyria](kyria) | ![Kyria keyboard](assets/kyria.webp) |
 | [Lotus58](lotus58) | ![Lotus58 keyboard](assets/lotus58.png) |
