@@ -12,7 +12,6 @@ This is a repo of my personal collection of firmware (QMK and ZMK) and hardware 
 
 While the specifics of each keyboard can vary, they generally all feature:
 
-- **58-key split layout** - Ergonomic split design with dedicated thumb clusters
 - **Homerow mods** - Timerless home row mods as described in [urob's config](https://github.com/urob/zmk-config).
 - **Symbol layer** - Optimized for programming inspired by [ShelZuuz](https://getreuer.info/posts/keyboards/symbol-layer/index.html)'s layout.
 - **Gaming layer** - Dedicated layer for gaming.
