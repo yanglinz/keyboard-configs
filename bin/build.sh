@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DIR=$(dirname "$(realpath $0)")
-export QMK_USERSPACE="${DIR}/out"
+export QMK_USERSPACE="${DIR}/../out"
 export SKIP_FLASHING_SUPPORT=1
 
 function copy_source() {
