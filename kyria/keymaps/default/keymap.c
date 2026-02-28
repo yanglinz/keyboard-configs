@@ -9,16 +9,16 @@ enum layers {
 };
 
 // Left-hand home row mods
-#define HOME_A LGUI_T(KC_A)
-#define HOME_S LALT_T(KC_S)
-#define HOME_D LCTL_T(KC_D)
-#define HOME_F LSFT_T(KC_F)
+#define HR_A LGUI_T(KC_A)
+#define HR_S LALT_T(KC_S)
+#define HR_D LCTL_T(KC_D)
+#define HR_F LSFT_T(KC_F)
 
 // Right-hand home row mods
-#define HOME_J RSFT_T(KC_J)
-#define HOME_K RCTL_T(KC_K)
-#define HOME_L LALT_T(KC_L)
-#define HOME_SCLN RGUI_T(KC_SCLN)
+#define HR_J RSFT_T(KC_J)
+#define HR_K RCTL_T(KC_K)
+#define HR_L LALT_T(KC_L)
+#define HR_SCLN RGUI_T(KC_SCLN)
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
@@ -69,12 +69,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_BASE] = LAYOUT(
     // Base qwerty layer
-    KC_TAB,   KC_Q,   KC_W,   KC_E,     KC_R,   KC_T                                               KC_Y,        KC_U,   KC_I,    KC_O,   KC_P,      KC_BSPC,
-    KC_ESC,   HOME_A, HOME_S, HOME_D,   HOME_F, KC_G                                               KC_H,        HOME_J, HOME_K,  HOME_L, HOME_SCLN, KC_QUOT,
-    KC_LSFT,  KC_Z,   KC_X,   KC_C,     KC_V,   KC_B,       KC_NO,  KC_NO,       KC_NO,  KC_NO,    KC_N,        KC_M,   KC_COMM, KC_DOT, KC_SLSH,   KC_RSFT
-                              MO(_ADJ), KC_NO,  TD(TD_NUM), KC_SPC, MO(_NAV),    KC_ENT, MO(_SYM), TD(TD_CAPS), KC_NO,  KC_NO
+    KC_TAB,  KC_Q, KC_W, KC_E, KC_R,     KC_T                                                         KC_Y,        KC_U,  KC_I,    KC_O,   KC_P,    KC_BSPC,
+    KC_ESC,  HR_A, HR_S, HR_D, HR_F,     KC_G                                                         KC_H,        HR_J,  HR_K,    HR_L,   HR_SCLN, KC_QUOT,
+    KC_LSFT, KC_Z, KC_X, KC_C, KC_V,     KC_B,  KC_NO,      KC_NO,                  KC_NO,  KC_NO,    KC_N,        KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
+                               MO(_ADJ), KC_NO, TD(TD_NUM), MO(_NAV), KC_SPC        KC_ENT, MO(_SYM), TD(TD_CAPS), KC_NO, KC_NO
     ),
 
+    /*
     [_SYM] = LAYOUT(
     // Symbol layer
     KC_GRV ,   KC_1 ,   KC_2 ,   KC_3 ,   KC_4 ,   KC_5 ,                                      KC_6 ,   KC_7 ,   KC_8 ,   KC_9 ,   KC_0 , KC_EQL ,
@@ -98,5 +99,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,_______, _______, _______, _______, _______, RM_SATD, RM_HUED, RM_VALD, RM_PREV, _______,
                                _______, _______, _______,_______, _______, _______, _______, _______, _______, _______
     ),
+    */
 
 };
