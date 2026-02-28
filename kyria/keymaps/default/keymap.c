@@ -1,11 +1,11 @@
 #include QMK_KEYBOARD_H
 
 enum layers {
-    _BASE = 0,
-    _SYM,
-    _NAV,
-    _NUM,
-    _ADJ,
+  _BASE = 0,
+  _SYM,
+  _NAV,
+  _NUM,
+  _ADJ,
 };
 
 // Left-hand home row mods
@@ -38,30 +38,29 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 // https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
 
 enum tdance {
-    TD_CAPS = 0,
-    TD_NUM,
+  TD_CAPS = 0,
+  TD_NUM,
 };
 
 void td_caps_finished(tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1) {
-        set_oneshot_mods(MOD_LSFT);
-    } else if (state->count >= 2) {
-        caps_word_toggle();
-    }
+  if (state->count == 1) {
+    set_oneshot_mods(MOD_LSFT);
+  } else if (state->count >= 2) {
+    caps_word_toggle();
+  }
 }
 
 void td_nums_finished(tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1) {
-        layer_invert(_NAV);
-    } else if (state->count >= 2) {
-        layer_invert(_NUM);
-    }
+  if (state->count == 1) {
+    layer_invert(_NAV);
+  } else if (state->count >= 2) {
+    layer_invert(_NUM);
+  }
 }
 
 tap_dance_action_t tap_dance_actions[] = {
     [TD_CAPS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_caps_finished, NULL),
-    [TD_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_nums_finished, NULL)
-};
+    [TD_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_nums_finished, NULL)};
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
