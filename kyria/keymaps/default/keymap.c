@@ -29,11 +29,6 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     );
 
 // todo:
-// 1. port base layer
-// -. port hmr
-// -. port tap dance
-// 2. port symbol layer
-// 3. port nav layer
 // 4. implement image gen
 // 5. implement auto formatting
 // https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
@@ -91,7 +86,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
-    /*
+    [_NUM] = LAYOUT(
+    // Number pad layer
+    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9, KC_0,  KC_DEL,
+    KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                                          KC_0,    KC_4,    KC_5,    KC_6, KC_NO, KC_TRNS,
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,      KC_NO,   KC_NO,   KC_0,    KC_1,    KC_2,    KC_3, KC_NO, KC_TRNS,
+                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    ),
+
     [_ADJ] = LAYOUT(
     // Adjustment layer
     _______, _______, _______, _______, _______, _______,                                    _______, _______, _______, _______, _______, _______,
@@ -99,6 +101,5 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,_______, _______, _______, _______, _______, RM_SATD, RM_HUED, RM_VALD, RM_PREV, _______,
                                _______, _______, _______,_______, _______, _______, _______, _______, _______, _______
     ),
-    */
 
 };
