@@ -22,15 +22,16 @@ enum layers {
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
-        'L', 'L', 'L', 'L', 'L', 'L',                       'R', 'R', 'R', 'R', 'R', 'R',
-        'L', 'L', 'L', 'L', 'L', 'L',                       'R', 'R', 'R', 'R', 'R', 'R',
-        'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L',   'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
-                       'L', 'L', 'L', 'L', 'L',   'R', 'R', 'R', 'R', 'R'
+    'L', 'L', 'L', 'L', 'L', 'L',                       'R', 'R', 'R', 'R', 'R', 'R',
+    'L', 'L', 'L', 'L', 'L', 'L',                       'R', 'R', 'R', 'R', 'R', 'R',
+    'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L',   'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
+                   'L', 'L', 'L', 'L', 'L',   'R', 'R', 'R', 'R', 'R'
     );
 
 // todo:
-// 4. implement image gen
-// 5. implement auto formatting
+// implement image gen
+// implement auto formatting
+// implement macos vs windows
 // https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
 
 enum tdance {
