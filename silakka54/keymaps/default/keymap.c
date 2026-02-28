@@ -53,6 +53,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 
 // todo: create enum for layers
 
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Base Layer
     [0] = LAYOUT(
