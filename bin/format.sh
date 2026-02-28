@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-clang-format -i ./kyria/**/*.c
-clang-format -i ./silakka54/**/*.c
+git ls-files -z -- '*.c' '*.cpp' '*.h' '*.hpp' | xargs -0 clang-format -style=file -i
