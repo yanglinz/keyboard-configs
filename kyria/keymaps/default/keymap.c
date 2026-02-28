@@ -5,7 +5,7 @@ enum layers {
     _SYM,
     _NAV,
     _NUM,
-    _ADJUST,
+    _ADJ,
 };
 
 // Left-hand home row mods
@@ -42,10 +42,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_BASE] = LAYOUT(
     // Base qwerty layer
-    KC_TAB,  KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSPC,
-    KC_ESC,  KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN, KC_QUOT,
-    KC_LSFT, KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_NO ,KC_NO,     KC_NO, KC_NO, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
-                               MO(_ADJUST) , KC_LGUI, KC_ENT, KC_SPC , MO(_NAV)   ,     MO(_SYM)    , KC_SPC ,KC_RALT, KC_RGUI, KC_APP
+    KC_TAB,   KC_Q,   KC_W,   KC_E,     KC_R,   KC_T                                               KC_Y,        KC_U,   KC_I,    KC_O,   KC_P,      KC_BSPC,
+    KC_ESC,   HOME_A, HOME_S, HOME_D,   HOME_F, KC_G                                               KC_H,        HOME_J, HOME_K,  HOME_L, HOME_SCLN, KC_QUOT,
+    KC_LSFT,  KC_Z,   KC_X,   KC_C,     KC_V,   KC_B,       KC_NO,  KC_NO,       KC_NO,  KC_NO,    KC_N,        KC_M,   KC_COMM, KC_DOT, KC_SLSH,   KC_RSFT
+                              MO(_ADJ), KC_NO,  TD(TD_NUM), KC_SPC, MO(_NAV),    KC_ENT, MO(_SYM), TD(TD_CAPS), KC_NO,  KC_NO
     ),
 
     [_NAV] = LAYOUT(
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
-    [_ADJUST] = LAYOUT(
+    [_ADJ] = LAYOUT(
     // Adjustment layer
     _______, _______, _______, _______, _______, _______,                                    _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,                                    RM_TOGG, RM_SATU, RM_HUEU, RM_VALU, RM_NEXT, _______,
