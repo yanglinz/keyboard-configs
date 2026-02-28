@@ -69,21 +69,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_BASE] = LAYOUT(
     // Base qwerty layer
-    KC_TAB,  KC_Q, KC_W, KC_E, KC_R,     KC_T,                                                     KC_Y,        KC_U,  KC_I,    KC_O,   KC_P,    KC_BSPC,
-    KC_ESC,  HR_A, HR_S, HR_D, HR_F,     KC_G,                                                     KC_H,        HR_J,  HR_K,    HR_L,   HR_SCLN, KC_QUOT,
-    KC_LSFT, KC_Z, KC_X, KC_C, KC_V,     KC_B,  KC_NO,      KC_NO,               KC_NO,  KC_NO,    KC_N,        KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
-                               MO(_ADJ), KC_NO, TD(TD_NUM), MO(_NAV), KC_SPC,    KC_ENT, MO(_SYM), TD(TD_CAPS), KC_NO, KC_NO
+    KC_TAB,  KC_Q, KC_W, KC_E,     KC_R,  KC_T,                                              KC_Y,        KC_U,  KC_I,    KC_O,   KC_P,    KC_BSPC,
+    KC_ESC,  HR_A, HR_S, HR_D,     HR_F,  KC_G,                                              KC_H,        HR_J,  HR_K,    HR_L,   HR_SCLN, KC_QUOT,
+    KC_LSFT, KC_Z, KC_X, KC_C,     KC_V,  KC_B,       KC_NO,    KC_NO,     KC_NO,  KC_NO,    KC_N,        KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
+                         MO(_ADJ), KC_NO, TD(TD_NUM), MO(_NAV), KC_SPC,    KC_ENT, MO(_SYM), TD(TD_CAPS), KC_NO, KC_NO
+    ),
+
+    [_SYM] = LAYOUT(
+    // Symbol layer
+    KC_TRNS, KC_GRV,     LSFT(KC_GRV),   KC_HASH,    LSFT(KC_7),     KC_PIPE,                                          LSFT(KC_6), LSFT(KC_LBRC), LSFT(KC_RBRC),  KC_LBRC,        KC_RBRC,        KC_DEL,
+    KC_TRNS, LSFT(KC_1), LSFT(KC_MINUS), KC_COLON,   KC_EQUAL,       KC_DOLLAR,                                        LSFT(KC_2), LSFT(KC_9),    LSFT(KC_0),     LSFT(KC_MINUS), KC_SCLN,        KC_TRNS,
+    KC_TRNS, KC_PERCENT, LSFT(KC_SLASH), LSFT(KC_8), LSFT(KC_EQUAL), KC_BSLS,   KC_TRNS, KC_TRNS,    KC_TRNS, KC_RCBR, KC_SLSH,    KC_MINUS,      LSFT(KC_COMMA), LSFT(KC_DOT),   LSFT(KC_QUOTE), KC_TRNS,
+                                         KC_TRNS,    KC_TRNS,        KC_TRNS,   KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
     /*
-    [_SYM] = LAYOUT(
-    // Symbol layer
-    KC_GRV ,   KC_1 ,   KC_2 ,   KC_3 ,   KC_4 ,   KC_5 ,                                      KC_6 ,   KC_7 ,   KC_8 ,   KC_9 ,   KC_0 , KC_EQL ,
-    KC_TILD , KC_EXLM,  KC_AT , KC_HASH,  KC_DLR, KC_PERC,                                     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
-    KC_PIPE , KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC, KC_LCBR, _______, _______, KC_RCBR, KC_RBRC, KC_UNDS, KC_COMM,  KC_DOT, KC_SLSH, KC_QUES,
-                                _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-    ),
-
     [_NAV] = LAYOUT(
     // Navigation layer
     _______, _______, _______, _______, _______, _______,                                     KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_VOLU, KC_DEL,
