@@ -42,6 +42,7 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_NUMS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_nums_finished, NULL)
 };
 
+// clang-format off
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
         'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
@@ -50,6 +51,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
         'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
                        'L', 'L', 'L',  'R', 'R', 'R'
     );
+// clang-format on
 
 // todo: create enum for layers
 

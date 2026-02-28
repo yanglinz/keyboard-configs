@@ -20,6 +20,7 @@ enum layers {
 #define HR_L LALT_T(KC_L)
 #define HR_SCLN RCTL_T(KC_SCLN)
 
+// clang-format off
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
     'L', 'L', 'L', 'L', 'L', 'L',                       'R', 'R', 'R', 'R', 'R', 'R',
@@ -27,6 +28,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L',   'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
                    'L', 'L', 'L', 'L', 'L',   'R', 'R', 'R', 'R', 'R'
     );
+// clang-format on
 
 // todo:
 // implement image gen
