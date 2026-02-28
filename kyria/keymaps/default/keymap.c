@@ -36,6 +36,33 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 // 3. port nav layer
 // 4. implement image gen
 // 5. implement auto formatting
+// https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
+
+enum tdance {
+    TD_CAPS = 0,
+    TD_NUM,
+};
+
+void td_caps_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        set_oneshot_mods(MOD_LSFT);
+    } else if (state->count >= 2) {
+        caps_word_toggle();
+    }
+}
+
+void td_nums_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        layer_invert(_NAV);
+    } else if (state->count >= 2) {
+        layer_invert(_NUM);
+    }
+}
+
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_CAPS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_caps_finished, NULL),
+    [TD_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_nums_finished, NULL)
+};
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -48,20 +75,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                               MO(_ADJ), KC_NO,  TD(TD_NUM), KC_SPC, MO(_NAV),    KC_ENT, MO(_SYM), TD(TD_CAPS), KC_NO,  KC_NO
     ),
 
+    [_SYM] = LAYOUT(
+    // Symbol layer
+    KC_GRV ,   KC_1 ,   KC_2 ,   KC_3 ,   KC_4 ,   KC_5 ,                                      KC_6 ,   KC_7 ,   KC_8 ,   KC_9 ,   KC_0 , KC_EQL ,
+    KC_TILD , KC_EXLM,  KC_AT , KC_HASH,  KC_DLR, KC_PERC,                                     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
+    KC_PIPE , KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC, KC_LCBR, _______, _______, KC_RCBR, KC_RBRC, KC_UNDS, KC_COMM,  KC_DOT, KC_SLSH, KC_QUES,
+                                _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    ),
+
     [_NAV] = LAYOUT(
     // Navigation layer
     _______, _______, _______, _______, _______, _______,                                     KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_VOLU, KC_DEL,
     _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLD, KC_INS,
     _______, _______, _______, _______, _______, _______, _______, KC_SCRL, _______, _______,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
                                _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-    ),
-
-    [_SYM] = LAYOUT(
-    // Navigation layer
-    KC_GRV ,   KC_1 ,   KC_2 ,   KC_3 ,   KC_4 ,   KC_5 ,                                       KC_6 ,   KC_7 ,   KC_8 ,   KC_9 ,   KC_0 , KC_EQL ,
-    KC_TILD , KC_EXLM,  KC_AT , KC_HASH,  KC_DLR, KC_PERC,                                     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
-    KC_PIPE , KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC, KC_LCBR, _______, _______, KC_RCBR, KC_RBRC, KC_UNDS, KC_COMM,  KC_DOT, KC_SLSH, KC_QUES,
-                                _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
     [_ADJ] = LAYOUT(
