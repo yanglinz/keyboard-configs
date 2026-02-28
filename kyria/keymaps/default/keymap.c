@@ -31,6 +31,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 // todo:
 // implement image gen
 // implement auto formatting
+// layer led
 // implement macos vs windows
 // https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
 
