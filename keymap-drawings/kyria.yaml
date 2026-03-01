@@ -1,238 +1,356 @@
 layout:
-  { qmk_keyboard: splitkb/halcyon/kyria/rev4, layout_name: LAYOUT_split_3x6_5 }
+  qmk_keyboard: splitkb/halcyon/kyria/rev4
+  layout_name: LAYOUT_split_3x6_5
 layers:
   L0:
-    - - TAB
-      - Q
-      - W
-      - E
-      - R
-      - T
-      - Y
-      - U
-      - I
-      - O
-      - P
-      - BSPC
-      - ESC
-      - { t: A, h: LCTL }
-    - - { t: S, h: LALT }
-      - { t: D, h: LGUI }
-      - { t: F, h: LSFT }
-      - G
-      - H
-      - { t: J, h: RSFT }
-      - { t: K, h: RGUI }
-      - { t: L, h: LALT }
-      - { t: ;, h: RCTL }
-      - "'"
-      - LSFT
-      - Z
-      - X
-      - C
-    - [V, B, "", "", "", "", N, M, ",", ., /, RSFT, MO( ADJ), ""]
-    - [MO( NAV), SPC, TD(TD NUM), TD(TD CAPS), ENT, MO( SYM), "", ""]
+  - - TAB
+    - Q
+    - W
+    - E
+    - R
+    - T
+    - Y
+    - U
+    - I
+    - O
+    - P
+    - BSPC
+    - ESC
+    - t: A
+      h: LCTL
+  - - t: S
+      h: LALT
+    - t: D
+      h: LGUI
+    - t: F
+      h: LSFT
+    - G
+    - H
+    - t: J
+      h: RSFT
+    - t: K
+      h: RGUI
+    - t: L
+      h: LALT
+    - t: ;
+      h: RCTL
+    - ''''
+    - LSFT
+    - Z
+    - X
+    - C
+  - - V
+    - B
+    - ''
+    - ''
+    - ''
+    - ''
+    - N
+    - M
+    - ','
+    - .
+    - /
+    - RSFT
+    - MO( ADJ)
+    - ''
+  - - MO( NAV)
+    - SPC
+    - TD(TD NUM)
+    - TD(TD CAPS)
+    - ENT
+    - MO( SYM)
+    - ''
+    - ''
   L1:
-    - - { t: ▽, type: trans }
-      - "`"
-      - Sft+`
-      - "#"
-      - Sft+7
-      - "|"
-      - Sft+6
-      - Sft+[
-      - Sft+]
-      - "["
-      - "]"
-      - DEL
-      - { t: ▽, type: trans }
-      - Sft+1
-    - - Sft+-
-      - ":"
-      - "="
-      - $
-      - Sft+2
-      - Sft+9
-      - Sft+0
-      - Sft+-
-      - ;
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - "%"
-      - Sft+/
-      - Sft+8
-    - - Sft+=
-      - \
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - "}"
-      - /
-      - "-"
-      - Sft+,
-      - Sft+.
-      - Sft+'
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-    - - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
+  - - t: "\u25BD"
+      type: trans
+    - '`'
+    - Sft+`
+    - '#'
+    - Sft+7
+    - '|'
+    - Sft+6
+    - Sft+[
+    - Sft+]
+    - '['
+    - ']'
+    - DEL
+    - t: "\u25BD"
+      type: trans
+    - Sft+1
+  - - Sft+-
+    - ':'
+    - '='
+    - $
+    - Sft+2
+    - Sft+9
+    - Sft+0
+    - Sft+-
+    - ;
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - '%'
+    - Sft+/
+    - Sft+8
+  - - Sft+=
+    - \
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - '}'
+    - /
+    - '-'
+    - Sft+,
+    - Sft+.
+    - Sft+'
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
   L2:
-    - - { t: ▽, type: trans }
-      - "1"
-      - "2"
-      - "3"
-      - "4"
-      - "5"
-      - "6"
-      - "7"
-      - "8"
-      - "9"
-      - "0"
-      - DEL
-      - { t: ▽, type: trans }
-      - LCTL
-    - - LALT
-      - LGUI
-      - LSFT
-      - ""
-      - LEFT
-      - DOWN
-      - UP
-      - RIGHT
-      - CAPS
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - ""
-      - ""
-      - ""
-    - - ""
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-      - HOME
-      - PGDN
-      - PGUP
-      - END
-      - INS
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-    - - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
+  - - t: "\u25BD"
+      type: trans
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '0'
+    - DEL
+    - t: "\u25BD"
+      type: trans
+    - LCTL
+  - - LALT
+    - LGUI
+    - LSFT
+    - ''
+    - LEFT
+    - DOWN
+    - UP
+    - RIGHT
+    - CAPS
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - ''
+    - ''
+    - ''
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - HOME
+    - PGDN
+    - PGUP
+    - END
+    - INS
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
   L3:
-    - - { t: ▽, type: trans }
-      - "1"
-      - "2"
-      - "3"
-      - "4"
-      - "5"
-      - "6"
-      - "7"
-      - "8"
-      - "9"
-      - "0"
-      - DEL
-      - { t: ▽, type: trans }
-      - LCTL
-    - - LALT
-      - LGUI
-      - LSFT
-      - ""
-      - "0"
-      - "4"
-      - "5"
-      - "6"
-      - ""
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - ""
-      - ""
-      - ""
-    - - ""
-      - ""
-      - ""
-      - ""
-      - ""
-      - ""
-      - "0"
-      - "1"
-      - "2"
-      - "3"
-      - ""
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-    - - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
+  - - t: "\u25BD"
+      type: trans
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '0'
+    - DEL
+    - t: "\u25BD"
+      type: trans
+    - LCTL
+  - - LALT
+    - LGUI
+    - LSFT
+    - ''
+    - '0'
+    - '4'
+    - '5'
+    - '6'
+    - ''
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - ''
+    - ''
+    - ''
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+    - ''
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
   L4:
-    - - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-    - - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - RM TOGG
-      - RM SATU
-      - RM HUEU
-      - RM VALU
-      - RM NEXT
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-    - - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - RM SATD
-      - RM HUED
-      - RM VALD
-      - RM PREV
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-    - - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
-      - { t: ▽, type: trans }
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - RM TOGG
+    - RM SATU
+    - RM HUEU
+    - RM VALU
+    - RM NEXT
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - RM SATD
+    - RM HUED
+    - RM VALD
+    - RM PREV
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
