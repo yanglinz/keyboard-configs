@@ -20,7 +20,7 @@ While the specifics of each keyboard can vary, they generally all feature:
 
 Here's the keymapping layout for my Kyria keyboard. My other keyboards may vary slightly, but will have a very similar layout.
 
-<img alt="Keymap for Lotus58" src="assets/lotus58.svg" />
+<img alt="Keymap for Kyria" src="keymap-drawings/kyria.svg" />
 
 ## Resources
 
