@@ -2,7 +2,7 @@
 
 ROOT_DIR="$(dirname "$(realpath $0)")/.."
 
-docker run --rm -it \
+docker run --rm \
   -w /qmk_firmware \
   -v "${ROOT_DIR}/qmk_firmware:/qmk_firmware:z" \
   -v "${ROOT_DIR}/out:/qmk_userspace:z" \
