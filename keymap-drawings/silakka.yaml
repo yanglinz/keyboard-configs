@@ -1,0 +1,251 @@
+layout: {qmk_keyboard: silakka54, layout_name: LAYOUT}
+layers:
+  L0:
+  - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', TAB, Q]
+  - - W
+    - E
+    - R
+    - T
+    - Y
+    - U
+    - I
+    - O
+    - P
+    - BSPC
+    - ESC
+    - {t: A, h: LGUI}
+    - {t: S, h: LALT}
+    - {t: D, h: LCTL}
+  - - {t: F, h: LSFT}
+    - G
+    - H
+    - {t: J, h: RSFT}
+    - {t: K, h: RCTL}
+    - {t: L, h: LALT}
+    - {t: ;, h: RGUI}
+    - ''''
+    - LSFT
+    - Z
+    - X
+    - C
+    - V
+    - B
+  - - N
+    - M
+    - ','
+    - .
+    - /
+    - TD(TD CAPS)
+    - TD(TD NUMS)
+    - {t: TAB, h: L2}
+    - SPC
+    - ENT
+    - L1
+    - TD(TD CAPS)
+  L1:
+  - - {t: ▽, type: trans}
+    - F1
+    - F2
+    - F3
+    - F4
+    - F5
+    - F6
+    - F7
+    - F8
+    - F9
+    - F10
+    - F11
+    - {t: ▽, type: trans}
+    - '`'
+  - - Sft+`
+    - '#'
+    - Sft+7
+    - '|'
+    - Sft+6
+    - Sft+[
+    - Sft+]
+    - '['
+    - ']'
+    - DEL
+    - {t: ▽, type: trans}
+    - Sft+1
+    - Sft+-
+    - ':'
+  - - '='
+    - $
+    - Sft+2
+    - Sft+9
+    - Sft+0
+    - Sft+-
+    - ;
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - '%'
+    - Sft+/
+    - Sft+8
+    - Sft+=
+    - \
+  - - /
+    - '-'
+    - Sft+,
+    - Sft+.
+    - Sft+'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: TAB, h: L3}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+  L2:
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: L4, h: tap-toggle}
+    - {t: ▽, type: trans}
+    - ''
+  - - ''
+    - ''
+    - ''
+    - ''
+    - AGAIN
+    - PASTE
+    - COPY
+    - CUT
+    - UNDO
+    - DEL
+    - {t: ▽, type: trans}
+    - LCTL
+    - LALT
+    - LGUI
+  - - LSFT
+    - ''
+    - LEFT
+    - DOWN
+    - UP
+    - RIGHT
+    - CAPS
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  - - HOME
+    - PGDN
+    - PGUP
+    - END
+    - INS
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - SPC
+    - ENT
+    - L3
+    - {t: ▽, type: trans}
+  L3:
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+  - - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - '7'
+    - '8'
+    - '9'
+    - UNDO
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - LCTL
+    - LALT
+    - LGUI
+  - - LSFT
+    - ''
+    - '0'
+    - '4'
+    - '5'
+    - '6'
+    - CAPS
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  - - ''
+    - '1'
+    - '2'
+    - '3'
+    - INS
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - SPC
+    - ENT
+    - {type: held}
+    - {t: ▽, type: trans}
+  L4:
+  - - ESC
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '0'
+    - {t: L4, h: tap-toggle, type: held}
+    - TAB
+    - Q
+  - - W
+    - E
+    - R
+    - T
+    - Y
+    - U
+    - I
+    - O
+    - P
+    - {t: ▽, type: trans}
+    - LSFT
+    - A
+    - S
+    - D
+  - [F, G, H, J, K, L, ;, '''', LCTL, Z, X, C, V, B]
+  - - N
+    - M
+    - ','
+    - .
+    - /
+    - RSFT
+    - {t: ▽, type: trans}
+    - {t: SPC, type: held}
+    - SPC
+    - ENT
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
