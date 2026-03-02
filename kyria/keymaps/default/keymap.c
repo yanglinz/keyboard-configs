@@ -31,8 +31,6 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 // clang-format on
 
 // todo:
-// implement image gen post processing
-// implement layer reset button
 // layer led
 // implement macos vs windows
 // https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
@@ -52,8 +50,10 @@ void td_caps_finished(tap_dance_state_t *state, void *user_data) {
 
 void td_nums_finished(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    layer_invert(_NAV);
+    set_oneshot_layer(_NAV, ONESHOT_START);
   } else if (state->count >= 2) {
+    layer_invert(_NAV);
+  } else if (state->count >= 3) {
     layer_invert(_NUM);
   }
 }
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q, KC_W, KC_E,     KC_R,  KC_T,                                                 KC_Y,     KC_U,  KC_I,    KC_O,   KC_P,    KC_BSPC,
     KC_ESC,  HR_A, HR_S, HR_D,     HR_F,  KC_G,                                                 KC_H,     HR_J,  HR_K,    HR_L,   HR_SCLN, KC_QUOT,
     KC_LSFT, KC_Z, KC_X, KC_C,     KC_V,  KC_B,     KC_NO,  KC_NO,         KC_NO,       KC_NO,  KC_N,     KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
-                         MO(_ADJ), KC_NO, MO(_NAV), KC_SPC, TD(TD_NUM),    TD(TD_CAPS), KC_ENT, MO(_SYM), KC_NO, KC_NO
+                         MO(_ADJ), KC_NO, MO(_NAV), KC_SPC, TD(TD_NUM),    TD(TD_CAPS), KC_ENT, MO(_SYM), KC_NO, TO(_BASE)
   ),
 
   // Symbol layer
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   // Navigation layer
   [_NAV] = LAYOUT(
-    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9,     KC_0,    KC_DEL,
+    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9,     KC_0,    KC_BSPC,
     KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                                          KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_CAPS, KC_TRNS,
     KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,      KC_NO,   KC_NO,   KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_INS,  KC_TRNS,
                                KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   // Number pad layer
   [_NUM] = LAYOUT(
-    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9, KC_0,  KC_DEL,
+    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9, KC_0,  KC_BSPC,
     KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                                          KC_0,    KC_4,    KC_5,    KC_6, KC_NO, KC_TRNS,
     KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,      KC_NO,   KC_NO,   KC_0,    KC_1,    KC_2,    KC_3, KC_NO, KC_TRNS,
                                KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
