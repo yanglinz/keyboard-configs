@@ -57,9 +57,13 @@ void td_nums_finished(tap_dance_state_t *state, void *user_data) {
   }
 }
 
+void td_nums_reset(tap_dance_state_t *state, void *user_data) {
+  clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
+}
+
 tap_dance_action_t tap_dance_actions[] = {
     [TD_CAPS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_caps_finished, NULL),
-    [TD_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_nums_finished, NULL)};
+    [TD_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_nums_finished, td_nums_reset)};
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
