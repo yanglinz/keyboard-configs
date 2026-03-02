@@ -1,8 +1,9 @@
 #include QMK_KEYBOARD_H
 
 // todo:
-// implement macos vs windows
-// https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
+// - led light layers
+// - implement macos vs windows
+// - https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
 
 enum layers {
   _BASE = 0,
