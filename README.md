@@ -20,9 +20,7 @@ While the specifics of each keyboard can vary, they generally all feature:
 
 Here's the keymapping layout for my Kyria keyboard. My other keyboards may vary slightly, but will have a very similar layout.
 
-<div style="background: white;">
 <img alt="Keymap for Kyria" src="keymap-drawings/kyria.svg" />
-<div>
 
 ## Resources
 
