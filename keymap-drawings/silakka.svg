@@ -126,6 +126,8 @@ path.combo {
 
 svg {
   background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 2px;
 }
 </style>
 <g transform="translate(30, 0)" class="layer-L0">

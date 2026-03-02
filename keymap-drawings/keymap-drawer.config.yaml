@@ -3,4 +3,5 @@ draw_config:
     svg {
       background-color: white;
       border: 1px solid #ddd;
+      border-radius: 2px;
     }
