@@ -65,36 +65,36 @@ layers:
   - - t: "\u25BD"
       type: trans
     - '`'
-    - Sft+`
+    - '~'
     - '#'
-    - Sft+7
+    - '&'
     - '|'
-    - Sft+6
-    - Sft+[
-    - Sft+]
+    - ^
+    - '{'
+    - '}'
     - '['
     - ']'
     - DEL
     - t: "\u25BD"
       type: trans
-    - Sft+1
-  - - Sft+-
+    - '!'
+  - - _
     - ':'
     - '='
     - $
-    - Sft+2
-    - Sft+9
-    - Sft+0
-    - Sft+-
+    - '@'
+    - (
+    - )
+    - _
     - ;
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
       type: trans
     - '%'
-    - Sft+/
-    - Sft+8
-  - - Sft+=
+    - '?'
+    - '*'
+  - - +
     - \
     - t: "\u25BD"
       type: trans
@@ -105,9 +105,9 @@ layers:
     - '}'
     - /
     - '-'
-    - Sft+,
-    - Sft+.
-    - Sft+'
+    - <
+    - '>'
+    - '"'
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
