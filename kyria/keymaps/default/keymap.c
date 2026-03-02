@@ -1,5 +1,9 @@
 #include QMK_KEYBOARD_H
 
+// todo:
+// implement macos vs windows
+// https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
+
 enum layers {
   _BASE = 0,
   _SYM,
@@ -29,11 +33,6 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
                    'L', 'L', 'L', 'L', 'L',   'R', 'R', 'R', 'R', 'R'
   );
 // clang-format on
-
-// todo:
-// layer led
-// implement macos vs windows
-// https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
 
 enum tdance {
   TD_CAPS = 0,
