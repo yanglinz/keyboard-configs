@@ -64,6 +64,7 @@ tap_dance_action_t tap_dance_actions[] = {
 // LED lighting
 bool rgb_matrix_indicators_user(void) {
   uint8_t layer = get_highest_layer(layer_state);
+  // todo get tap dance state and represent that in the led
 
   switch (layer) {
   case _BASE:
