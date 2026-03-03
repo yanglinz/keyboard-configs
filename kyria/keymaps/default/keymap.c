@@ -1,7 +1,6 @@
 #include QMK_KEYBOARD_H
 
 // todo:
-// - led light layers
 // - implement macos vs windows
 // https://github.com/mmccoyd/hillside/tree/main/hillside46
 // https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
@@ -61,6 +60,26 @@ void td_nums_finished(tap_dance_state_t *state, void *user_data) {
 tap_dance_action_t tap_dance_actions[] = {
     [TD_CAPS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_caps_finished, NULL),
     [TD_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_nums_finished, NULL)};
+
+// LED lighting
+bool rgb_matrix_indicators_user(void) {
+  uint8_t layer = get_highest_layer(layer_state);
+
+  switch (layer) {
+  case _SYM:
+    rgb_matrix_set_color_all(0, 0, 255);
+    break;
+  case _NAV:
+    rgb_matrix_set_color_all(0, 0, 155);
+    break;
+  default:
+    // Returning false here lets the regular animation run normally
+    return false;
+  }
+
+  // Indicate that we've handled the frame
+  return true;
+}
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
