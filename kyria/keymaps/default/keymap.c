@@ -71,6 +71,7 @@ bool rgb_matrix_indicators_user(void) {
     rgb_matrix_set_color_all(0, 0, 0); // off
     break;
   case _SYM:
+    rgb_matrix_sethsv(0, 255, 255);
     rgb_matrix_set_color_all(0, 255, 0); // green
     break;
   case _NAV:
