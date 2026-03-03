@@ -36,6 +36,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
   );
 // clang-format on
 
+// Tap dance logic
 enum tdance {
   TD_CAPS = 0,
   TD_NUM,
@@ -53,7 +54,7 @@ void td_nums_finished(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
     layer_invert(_NAV);
   } else if (state->count == 2) {
-    layer_invert(_NAV);
+    layer_invert(_NUM);
   }
 }
 
