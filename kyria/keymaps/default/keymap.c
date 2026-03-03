@@ -66,15 +66,29 @@ bool rgb_matrix_indicators_user(void) {
   uint8_t layer = get_highest_layer(layer_state);
 
   switch (layer) {
+  case _BASE:
+    rgb_matrix_sethsv(0, 0, 0);
+    rgb_matrix_set_color_all(0, 0, 0); // off
+    break;
   case _SYM:
-    rgb_matrix_set_color_all(0, 0, 255);
+    rgb_matrix_set_color_all(0, 255, 0); // green
     break;
   case _NAV:
-    rgb_matrix_set_color_all(0, 0, 155);
+    rgb_matrix_sethsv(0, 255, 255);
+    rgb_matrix_set_color_all(0, 100, 255); // blue
+    break;
+  case _NUM:
+    rgb_matrix_sethsv(0, 255, 255);
+    rgb_matrix_set_color_all(255, 100, 0); // orange
+    break;
+  case _ADJ:
+    rgb_matrix_sethsv(0, 255, 255);
+    rgb_matrix_set_color_all(255, 0, 0); // red
     break;
   default:
-    // Returning false here lets the regular animation run normally
-    return false;
+    rgb_matrix_sethsv(0, 255, 255);
+    rgb_matrix_set_color_all(255, 0, 0); // red
+    break;
   }
 
   // Indicate that we've handled the frame
