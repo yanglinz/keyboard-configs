@@ -3,6 +3,7 @@
 // todo:
 // - led light layers
 // - implement macos vs windows
+// https://github.com/mmccoyd/hillside/tree/main/hillside46
 // https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
 
 enum layers {

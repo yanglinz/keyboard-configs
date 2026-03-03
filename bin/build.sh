@@ -22,3 +22,4 @@ function compile() {
 
 copy_source
 compile
+./bin/keymap-gen.sh
