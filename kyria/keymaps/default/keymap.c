@@ -1,10 +1,5 @@
 #include QMK_KEYBOARD_H
 
-// todo:
-// - implement macos vs windows
-// https://github.com/mmccoyd/hillside/tree/main/hillside46
-// https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
-
 enum layers {
   _BASE = 0,
   _WIN,
@@ -13,6 +8,12 @@ enum layers {
   _NUM,
   _ADJ,
 };
+
+/*
+ * =============
+ * Home row mods
+ * =============
+ */
 
 // Left-hand home row mods (MacOS)
 #define HR_A LCTL_T(KC_A)
@@ -48,7 +49,12 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
   );
 // clang-format on
 
-// Tap dance logic
+/*
+ * =========
+ * Tap dance
+ * =========
+ */
+
 enum tdance {
   TD_CAPS = 0,
   TD_NUM,
@@ -74,7 +80,43 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_CAPS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_caps_finished, NULL),
     [TD_NUM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_nums_finished, NULL)};
 
-// LED lighting
+/*
+ * =========
+ * Macros
+ * =========
+ */
+
+enum custom_keycodes {
+  MC_SEL_LINE = SAFE_RANGE,
+};
+
+const uint16_t PROGMEM line_combo[] = {KC_J, KC_SCLN, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(line_combo, MC_SEL_LINE),
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+  case MC_SEL_LINE:
+    if (record->event.pressed) {
+      // https://www.reddit.com/r/ErgoMechKeyboards/comments/1c9satw/whats_your_favorite_productivity_macro/
+      tap_code(KC_HOME);
+      register_code(KC_LSFT);
+      tap_code(KC_END);
+      unregister_code(KC_LSFT);
+    }
+    return false;
+  }
+  return true;
+}
+
+/*
+ * =========
+ * Tap dance
+ * =========
+ */
+
 bool rgb_matrix_indicators_user(void) {
   uint8_t layer = get_highest_layer(layer_state);
   // todo: get tap dance state and represent that in the led
@@ -121,6 +163,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   // Symbol layer
+  // todo: migrate some over from https://github.com/mmccoyd/hillside/tree/main/hillside46
   [_SYM] = LAYOUT(
     KC_TRNS, KC_GRV,     LSFT(KC_GRV),   KC_HASH,    LSFT(KC_7),     KC_PIPE,                                          LSFT(KC_6), LSFT(KC_LBRC), LSFT(KC_RBRC),  KC_LBRC,        KC_RBRC,        KC_DEL,
     KC_TRNS, LSFT(KC_1), LSFT(KC_MINUS), KC_COLON,   KC_EQUAL,       KC_DOLLAR,                                        LSFT(KC_2), LSFT(KC_9),    LSFT(KC_0),     LSFT(KC_MINUS), KC_SCLN,        KC_TRNS,

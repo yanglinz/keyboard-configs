@@ -11,6 +11,9 @@
 #define CHORDAL_HOLD
 #define SPECULATIVE_HOLD
 
+// combos
+#define COMBO_TERM 50
+
 // Make it easier to enter the bootloader
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 1000U

@@ -64,6 +64,107 @@ layers:
   L1:
   - - t: "\u25BD"
       type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: A
+      h: LGUI
+  - - t: S
+      h: LALT
+    - t: D
+      h: LCTL
+    - t: F
+      h: LSFT
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: J
+      h: RSFT
+    - t: K
+      h: RCTL
+    - t: L
+      h: LALT
+    - t: ;
+      h: RGUI
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  L2:
+  - - t: "\u25BD"
+      type: trans
     - '`'
     - '~'
     - '#'
@@ -131,7 +232,7 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  L2:
+  L3:
   - - t: "\u25BD"
       type: trans
     - '1'
@@ -197,7 +298,7 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  L3:
+  L4:
   - - t: "\u25BD"
       type: trans
     - '1'
@@ -263,7 +364,7 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  L4:
+  L5:
   - - t: "\u25BD"
       type: trans
     - t: "\u25BD"
@@ -276,10 +377,8 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
+    - PDF( BASE)
+    - PDF( WIN)
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
