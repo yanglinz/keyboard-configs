@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: lotus58}
 layers:
   Default Layer:
-  - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', +, TAB, Q]
+  - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', TAB, Q]
   - - W
     - E
     - R
@@ -11,7 +11,7 @@ layers:
     - I
     - O
     - P
-    - '['
+    - BACKSPACE
     - ESC
     - {t: A, h: LCTRL}
     - {t: S, h: LALT}
@@ -39,15 +39,12 @@ layers:
     - ','
     - .
     - /
-    - {t: \, h: RSHFT}
+    - '&td_caps'
     - LALT
-    - LGUI
+    - '&td_nums'
     - {t: TAB, h: Navigation and Media Layer}
     - SPACE
-  - - RET
-    - {t: BSPC, h: Symbol Layer}
-    - DEL
-    - LGUI
+  - [RET, Symbol Layer, '&td_caps', LGUI]
   Symbol Layer:
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -64,33 +61,33 @@ layers:
     - {t: ▽, type: trans}
     - '`'
   - - '~'
-    - Sft+3
-    - Sft+7
-    - Sft+\
-    - Sft+6
-    - Sft+[
-    - Sft+]
+    - '#'
+    - '&'
+    - '|'
+    - ^
+    - '{'
+    - '}'
     - '['
     - ']'
+    - DEL
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - Sft+1
+    - '!'
     - _
-    - Sft+;
+    - ':'
   - - '='
-    - Sft+4
+    - $
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - Sft+2
-    - Sft+9
-    - Sft+0
+    - '@'
+    - (
+    - )
     - _
     - ;
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - Sft+5
-    - Sft+/
-    - Sft+8
+    - '%'
+    - '?'
+    - '*'
   - - +
     - \
     - {t: ▽, type: trans}
@@ -121,7 +118,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {t: Gaming Layer, h: toggle}
     - {t: ▽, type: trans}
     - ''
   - - ''
@@ -133,7 +130,7 @@ layers:
     - AC COPY
     - AC CUT
     - AC UNDO
-    - {t: ▽, type: trans}
+    - DEL
     - {t: ▽, type: trans}
     - LCTRL
     - LALT
@@ -146,7 +143,7 @@ layers:
     - DOWN
     - UP
     - RIGHT
-    - CAPS LOCK
+    - CAPSLOCK
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - ''
@@ -156,11 +153,11 @@ layers:
     - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - INS
     - HOME
     - PG DN
     - PG UP
     - END
+    - INS
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -184,16 +181,16 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-  - - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - '1'
+  - - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
     - '7'
     - '8'
     - '9'
-    - {t: ▽, type: trans}
+    - '0'
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - LCTRL
@@ -242,9 +239,9 @@ layers:
     - ''
     - ''
     - ''
+    - ''
     - {t: Gaming Layer, h: toggle}
-    - ''
-    - ''
+    - TAB
     - Q
   - [W, E, R, T, '', '', '', '', '', '', LSHFT, A, S, D]
   - [F, G, '', '', '', '', '', '', '', '', LCTRL, Z, X, C]
