@@ -32,9 +32,9 @@ The firmware for my keyboards is setup to be built locally.
 
 You'll need the following tools locally.
 
-- **[Docker](https://www.docker.com/)** - For running QMK builds in containers
-- **[uv](https://docs.astral.sh/uv/)** - Python package manager
-- **[clang-format](https://clang.llvm.org/docs/ClangFormat/)** - For C code formatting
+- [`Docker`](https://www.docker.com/) - For running QMK builds in containers
+- [`uv`](https://docs.astral.sh/uv/) - Python package manager
+- [`clang-format`](https://clang.llvm.org/docs/ClangFormat.html) - For C code formatting
 
 ### Commands
 
