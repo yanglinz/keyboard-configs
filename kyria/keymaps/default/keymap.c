@@ -7,23 +7,36 @@
 
 enum layers {
   _BASE = 0,
+  _WIN,
   _SYM,
   _NAV,
   _NUM,
   _ADJ,
 };
 
-// Left-hand home row mods
+// Left-hand home row mods (MacOS)
 #define HR_A LCTL_T(KC_A)
 #define HR_S LALT_T(KC_S)
 #define HR_D LGUI_T(KC_D)
 #define HR_F LSFT_T(KC_F)
 
-// Right-hand home row mods
+// Right-hand home row mods (MacOS)
 #define HR_J RSFT_T(KC_J)
 #define HR_K RGUI_T(KC_K)
 #define HR_L LALT_T(KC_L)
 #define HR_SCLN RCTL_T(KC_SCLN)
+
+// Left-hand home row mods (Windows)
+#define HRW_A LGUI_T(KC_A)
+#define HRW_S LALT_T(KC_S)
+#define HRW_D LCTL_T(KC_D)
+#define HRW_F LSFT_T(KC_F)
+
+// Right-hand home row mods (Windows)
+#define HRW_J RSFT_T(KC_J)
+#define HRW_K RCTL_T(KC_K)
+#define HRW_L LALT_T(KC_L)
+#define HRW_SCLN RGUI_T(KC_SCLN)
 
 // clang-format off
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
@@ -76,6 +89,7 @@ bool rgb_matrix_indicators_user(void) {
     rgb_matrix_set_color_all(255, 0, 0); // red
     break;
   case _BASE:
+  case _WIN:
   case _SYM:
   case _NAV:
   default:
@@ -97,6 +111,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  HR_A, HR_S, HR_D,     HR_F,  KC_G,                                                 KC_H,     HR_J,  HR_K,    HR_L,   HR_SCLN, KC_QUOT,
     KC_LSFT, KC_Z, KC_X, KC_C,     KC_V,  KC_B,     KC_NO,  KC_NO,         KC_NO,       KC_NO,  KC_N,     KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
                          MO(_ADJ), KC_NO, MO(_NAV), KC_SPC, TD(TD_NUM),    TD(TD_CAPS), KC_ENT, MO(_SYM), KC_NO, TO(_BASE)
+  ),
+
+  [_WIN] = LAYOUT(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,
+    KC_TRNS, HRW_A,   HRW_S,   HRW_D,   HRW_F,   KC_TRNS,                                     KC_TRNS, HRW_J,   HRW_K,   HRW_L,   HRW_SCLN, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,
+                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
   // Symbol layer
@@ -125,9 +146,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   // Adjustment layer
   [_ADJ] = LAYOUT(
-    _______, _______, _______, _______, _______, _______,                                    _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______,                                    RM_TOGG, RM_SATU, RM_HUEU, RM_VALU, RM_NEXT, _______,
-    _______, _______, _______, _______, _______, _______,_______, _______, _______, _______, _______, RM_SATD, RM_HUED, RM_VALD, RM_PREV, _______,
-                               _______, _______, _______,_______, _______, _______, _______, _______, _______, _______
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                     PDF(_BASE), PDF(_WIN), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                     RM_TOGG,    RM_SATU,   RM_HUEU, RM_VALU, RM_NEXT, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    RM_SATD,   RM_HUED, RM_VALD, RM_PREV, KC_TRNS,
+                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS,   KC_TRNS
   ),
 };
