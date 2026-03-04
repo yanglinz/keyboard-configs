@@ -90,7 +90,7 @@ enum custom_keycodes {
   MC_SEL_LINE = SAFE_RANGE,
 };
 
-const uint16_t PROGMEM line_combo[] = {KC_J, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM line_combo[] = {KC_X, KC_DOT, COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(line_combo, MC_SEL_LINE),
