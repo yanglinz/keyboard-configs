@@ -20,6 +20,6 @@ function compile() {
   cd -
 }
 
+./bin/keymap-gen.sh
 copy_source
 compile
-./bin/keymap-gen.sh
