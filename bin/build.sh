@@ -14,9 +14,9 @@ function copy_source() {
 
 function compile() {
   cd qmk_firmware
-  util/docker_build.sh splitkb/halcyon/kyria/rev4:default
   # TODO: add logic to compare diff against master
-  # util/docker_build.sh silakka54:default
+  # util/docker_build.sh splitkb/halcyon/kyria/rev4:default
+  util/docker_build.sh silakka54:default
   cd -
 }
 

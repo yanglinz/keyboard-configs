@@ -3,6 +3,21 @@
 
 #include QMK_KEYBOARD_H
 
+enum layers {
+  _BASE = 0,
+  _WIN,
+  _SYM,
+  _NAV,
+  _NUM,
+  _ADJ,
+};
+
+/*
+ * =============
+ * Home row mods
+ * =============
+ */
+
 // Left-hand home row mods
 #define HOME_A LGUI_T(KC_A)
 #define HOME_S LALT_T(KC_S)
@@ -15,7 +30,23 @@
 #define HOME_L LALT_T(KC_L)
 #define HOME_SCLN RGUI_T(KC_SCLN)
 
-// Tap dance
+// clang-format off
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+  LAYOUT(
+    'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+    'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+    'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+    'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+                   'L', 'L', 'L',  'R', 'R', 'R'
+  );
+// clang-format on
+
+/*
+ * =========
+ * Tap dance
+ * =========
+ */
+
 enum {
   TD_CAPS,
   TD_NUMS,
@@ -40,19 +71,6 @@ void td_nums_finished(tap_dance_state_t *state, void *user_data) {
 tap_dance_action_t tap_dance_actions[] = {
     [TD_CAPS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_caps_finished, NULL),
     [TD_NUMS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_nums_finished, NULL)};
-
-// clang-format off
-const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
-  LAYOUT(
-    'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
-    'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
-    'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
-    'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
-                   'L', 'L', 'L',  'R', 'R', 'R'
-  );
-// clang-format on
-
-// todo: create enum for layers
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
