@@ -105,12 +105,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   // Symbol Layer
-  [1] = LAYOUT(
-    KC_TRNS, KC_F1,      KC_F2,          KC_F3,      KC_F4,          KC_F5,                               KC_F6,      KC_F7,         KC_F8,          KC_F9,          KC_F10,         KC_F11,
-    KC_TRNS, KC_GRV,     LSFT(KC_GRV),   KC_HASH,    LSFT(KC_7),     KC_PIPE,                             LSFT(KC_6), LSFT(KC_LBRC), LSFT(KC_RBRC),  KC_LBRC,        KC_RBRC,        KC_DEL,
-    KC_TRNS, LSFT(KC_1), LSFT(KC_MINUS), KC_COLON,   KC_EQUAL,       KC_DOLLAR,                           LSFT(KC_2), LSFT(KC_9),    LSFT(KC_0),     LSFT(KC_MINUS), KC_SCLN,        KC_TRNS,
-    KC_TRNS, KC_PERCENT, LSFT(KC_SLASH), LSFT(KC_8), LSFT(KC_EQUAL), KC_BSLS,                             KC_SLSH,    KC_MINUS,      LSFT(KC_COMMA), LSFT(KC_DOT),   LSFT(KC_QUOTE), KC_TRNS,
-                                                     KC_TRNS,        LT(3, KC_TAB), KC_TRNS,     KC_TRNS, KC_TRNS,    KC_TRNS
+  [_SYM] = LAYOUT(
+    KC_TRNS, KC_F1,      KC_F2,          KC_F3,      KC_F4,          KC_F5,                       KC_F6,      KC_F7,         KC_F8,          KC_F9,          KC_F10,         KC_F11,
+    KC_TRNS, KC_GRV,     LSFT(KC_GRV),   KC_HASH,    LSFT(KC_7),     KC_PIPE,                     LSFT(KC_6), LSFT(KC_LBRC), LSFT(KC_RBRC),  LSFT(KC_MINUS), LSFT(KC_QUOTE), KC_DEL,
+    KC_TRNS, LSFT(KC_1), LSFT(KC_MINUS), KC_LBRC,    KC_RBRC,        KC_DOLLAR,                   LSFT(KC_2), LSFT(KC_9),    LSFT(KC_0),     KC_EQUAL,       KC_COLON,       KC_TRNS,
+    KC_TRNS, KC_PERCENT, LSFT(KC_SLASH), LSFT(KC_8), LSFT(KC_EQUAL), KC_BSLS,                     KC_SLSH,    KC_MINUS,      LSFT(KC_COMMA), LSFT(KC_DOT),   KC_QUOTE,       KC_TRNS,
+                                                     KC_TRNS,        KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS,    KC_TRNS
   ),
 
   // Nav and Media Layer
