@@ -18,17 +18,29 @@ enum layers {
  * =============
  */
 
-// Left-hand home row mods
-#define HOME_A LGUI_T(KC_A)
-#define HOME_S LALT_T(KC_S)
-#define HOME_D LCTL_T(KC_D)
-#define HOME_F LSFT_T(KC_F)
+// Left-hand home row mods (MacOS)
+#define HR_A LCTL_T(KC_A)
+#define HR_S LALT_T(KC_S)
+#define HR_D LGUI_T(KC_D)
+#define HR_F LSFT_T(KC_F)
 
-// Right-hand home row mods
-#define HOME_J RSFT_T(KC_J)
-#define HOME_K RCTL_T(KC_K)
-#define HOME_L LALT_T(KC_L)
-#define HOME_SCLN RGUI_T(KC_SCLN)
+// Right-hand home row mods (MacOS)
+#define HR_J RSFT_T(KC_J)
+#define HR_K RGUI_T(KC_K)
+#define HR_L LALT_T(KC_L)
+#define HR_SCLN RCTL_T(KC_SCLN)
+
+// Left-hand home row mods (Windows)
+#define HRW_A LGUI_T(KC_A)
+#define HRW_S LALT_T(KC_S)
+#define HRW_D LCTL_T(KC_D)
+#define HRW_F LSFT_T(KC_F)
+
+// Right-hand home row mods (Windows)
+#define HRW_J RSFT_T(KC_J)
+#define HRW_K RCTL_T(KC_K)
+#define HRW_L LALT_T(KC_L)
+#define HRW_SCLN RGUI_T(KC_SCLN)
 
 // clang-format off
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
@@ -75,12 +87,12 @@ tap_dance_action_t tap_dance_actions[] = {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Base Layer
-  [0] = LAYOUT(
-    KC_GRAVE, KC_1,   KC_2,   KC_3,   KC_4,        KC_5,                             KC_6,  KC_7,        KC_8,    KC_9,   KC_0,      KC_EQUAL,
-    KC_TAB,   KC_Q,   KC_W,   KC_E,   KC_R,        KC_T,                             KC_Y,  KC_U,        KC_I,    KC_O,   KC_P,      KC_BSPC,
-    KC_ESC,   HOME_A, HOME_S, HOME_D, HOME_F,      KC_G,                             KC_H,  HOME_J,      HOME_K,  HOME_L, HOME_SCLN, KC_QUOT,
-    KC_LSFT,  KC_Z,   KC_X,   KC_C,   KC_V,        KC_B,                             KC_N,  KC_M,        KC_COMM, KC_DOT, KC_SLSH,   TD(TD_CAPS),
-                                      TD(TD_NUMS), LT(2, KC_TAB), KC_SPC,    KC_ENT, MO(1), TD(TD_CAPS)
+  [_BASE] = LAYOUT(
+    MO(_ADJ), KC_1, KC_2, KC_3, KC_4,        KC_5,                       KC_6,     KC_7, KC_8,    KC_9,   KC_0,    KC_EQUAL,
+    KC_TAB,   KC_Q, KC_W, KC_E, KC_R,        KC_T,                       KC_Y,     KC_U, KC_I,    KC_O,   KC_P,    KC_BSPC,
+    KC_ESC,   HR_A, HR_S, HR_D, HR_F,        KC_G,                       KC_H,     HR_J, HR_K,    HR_L,   HR_SCLN, KC_QUOT,
+    KC_LSFT,  KC_Z, KC_X, KC_C, KC_V,        KC_B,                       KC_N,     KC_M, KC_COMM, KC_DOT, KC_SLSH, TD(TD_CAPS),
+                                TD(TD_NUMS), MO(_NAV), KC_SPC,   KC_ENT, MO(_SYM), KC_NO
   ),
 
   // Symbol Layer
