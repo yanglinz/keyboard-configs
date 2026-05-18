@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: silakka54, layout_name: LAYOUT}
 layers:
   L0:
-  - ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', TAB, Q]
+  - [MO( ADJ), '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '=', TAB, Q]
   - - W
     - E
     - R
@@ -13,16 +13,16 @@ layers:
     - P
     - BSPC
     - ESC
-    - {t: A, h: LGUI}
+    - {t: A, h: LCTL}
     - {t: S, h: LALT}
-    - {t: D, h: LCTL}
+    - {t: D, h: LGUI}
   - - {t: F, h: LSFT}
     - G
     - H
     - {t: J, h: RSFT}
-    - {t: K, h: RCTL}
+    - {t: K, h: RGUI}
     - {t: L, h: LALT}
-    - {t: ;, h: RGUI}
+    - {t: ;, h: RCTL}
     - ''''
     - LSFT
     - Z
@@ -30,19 +30,63 @@ layers:
     - C
     - V
     - B
-  - - N
-    - M
-    - ','
-    - .
-    - /
-    - TD(TD CAPS)
-    - TD(TD NUMS)
-    - {t: TAB, h: L2}
-    - SPC
-    - ENT
-    - L1
-    - TD(TD CAPS)
+  - [N, M, ',', ., /, TD(TD CAPS), TD(TD NUMS), MO( NAV), SPC, ENT, MO( SYM), '']
   L1:
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: A, h: LGUI}
+    - {t: S, h: LALT}
+    - {t: D, h: LCTL}
+  - - {t: F, h: LSFT}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: J, h: RSFT}
+    - {t: K, h: RCTL}
+    - {t: L, h: LALT}
+    - {t: ;, h: RGUI}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  L2:
   - - {t: ▽, type: trans}
     - F1
     - F2
@@ -64,20 +108,20 @@ layers:
     - Sft+6
     - Sft+[
     - Sft+]
-    - '['
-    - ']'
+    - Sft+-
+    - Sft+'
     - DEL
     - {t: ▽, type: trans}
     - Sft+1
     - Sft+-
-    - ':'
-  - - '='
+    - '['
+  - - ']'
     - $
     - Sft+2
     - Sft+9
     - Sft+0
-    - Sft+-
-    - ;
+    - '='
+    - ':'
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - '%'
@@ -89,15 +133,15 @@ layers:
     - '-'
     - Sft+,
     - Sft+.
-    - Sft+'
+    - ''''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: TAB, h: L3}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {type: held}
     - {t: ▽, type: trans}
-  L2:
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  L3:
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -109,19 +153,19 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: L4, h: tap-toggle}
     - {t: ▽, type: trans}
-    - ''
-  - - ''
-    - ''
-    - ''
-    - ''
-    - AGAIN
-    - PASTE
-    - COPY
-    - CUT
-    - UNDO
-    - DEL
+    - {t: ▽, type: trans}
+    - '1'
+  - - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '0'
+    - BSPC
     - {t: ▽, type: trans}
     - LCTL
     - LALT
@@ -147,12 +191,12 @@ layers:
     - INS
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {type: held}
-    - SPC
-    - ENT
-    - L3
     - {t: ▽, type: trans}
-  L3:
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  L4:
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -166,17 +210,17 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - ''
-  - - ''
-    - ''
-    - ''
-    - ''
-    - ''
+    - '1'
+  - - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
     - '7'
     - '8'
     - '9'
-    - UNDO
-    - {t: ▽, type: trans}
+    - '0'
+    - BSPC
     - {t: ▽, type: trans}
     - LCTL
     - LALT
@@ -187,7 +231,7 @@ layers:
     - '4'
     - '5'
     - '6'
-    - CAPS
+    - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - ''
@@ -195,57 +239,70 @@ layers:
     - ''
     - ''
     - ''
-  - - ''
+  - - '0'
     - '1'
     - '2'
     - '3'
-    - INS
+    - ''
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {type: held}
-    - SPC
-    - ENT
-    - {type: held}
     - {t: ▽, type: trans}
-  L4:
-  - - ESC
-    - '1'
-    - '2'
-    - '3'
-    - '4'
-    - '5'
-    - '6'
-    - '7'
-    - '8'
-    - '9'
-    - '0'
-    - {t: L4, h: tap-toggle, type: held}
-    - TAB
-    - Q
-  - - W
-    - E
-    - R
-    - T
-    - Y
-    - U
-    - I
-    - O
-    - P
     - {t: ▽, type: trans}
-    - LSFT
-    - A
-    - S
-    - D
-  - [F, G, H, J, K, L, ;, '''', LCTL, Z, X, C, V, B]
-  - - N
-    - M
-    - ','
-    - .
-    - /
-    - RSFT
     - {t: ▽, type: trans}
-    - {t: SPC, type: held}
-    - SPC
-    - ENT
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  L5:
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - PDF( BASE)
+    - PDF( WIN)
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - RM TOGG
+    - RM SATU
+    - RM HUEU
+    - RM VALU
+    - RM NEXT
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - RM SATD
+    - RM HUED
+    - RM VALD
+    - RM PREV
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
