@@ -6,9 +6,8 @@
 enum layers {
   _BASE = 0,
   _WIN,
-  _SYM,
   _NAV,
-  _NUM,
+  _SYM,
   _ADJ,
 };
 
@@ -75,7 +74,9 @@ void td_nums_finished(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
     layer_invert(_NAV);
   } else if (state->count == 2) {
-    layer_invert(_NUM);
+    // Leaving the logic here in case we change our mind and want
+    // a numpad layer in the future again.
+    layer_invert(_NAV);
   }
 }
 
@@ -125,10 +126,6 @@ bool rgb_matrix_indicators_user(void) {
   // todo: get tap dance state and represent that in the led
 
   switch (layer) {
-  case _NUM:
-    rgb_matrix_sethsv(0, 255, 55);
-    rgb_matrix_set_color_all(255, 100, 0); // orange
-    break;
   case _ADJ:
     rgb_matrix_sethsv(0, 255, 55);
     rgb_matrix_set_color_all(255, 0, 0); // red
@@ -165,29 +162,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
+  // Navigation layer
+  [_NAV] = LAYOUT(
+    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9,     KC_0,    KC_BSPC,
+    KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                                          KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_PGDN, KC_PGUP,
+    KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,   KC_NO,   KC_NO,      KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,
+                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+  ),
+
   // Symbol layer
-  // todo: migrate some over from https://github.com/mmccoyd/hillside/tree/main/hillside46
   [_SYM] = LAYOUT(
     KC_TRNS, KC_GRV,     LSFT(KC_GRV),   KC_HASH,    LSFT(KC_7),     KC_PIPE,                                          LSFT(KC_6), LSFT(KC_LBRC), LSFT(KC_RBRC),  LSFT(KC_MINUS), LSFT(KC_QUOTE), KC_DEL,
     KC_TRNS, LSFT(KC_1), LSFT(KC_MINUS), KC_LBRC,    KC_RBRC,        KC_DOLLAR,                                        LSFT(KC_2), LSFT(KC_9),    LSFT(KC_0),     KC_EQUAL,       KC_COLON,       KC_TRNS,
     KC_TRNS, KC_PERCENT, LSFT(KC_SLASH), LSFT(KC_8), LSFT(KC_EQUAL), KC_BSLS,   KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_SLSH,    KC_MINUS,      LSFT(KC_COMMA), LSFT(KC_DOT),   KC_QUOTE,       KC_TRNS,
                                          KC_TRNS,    KC_TRNS,        KC_TRNS,   KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
-  ),
-
-  // Navigation layer
-  [_NAV] = LAYOUT(
-    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9,     KC_0,    KC_BSPC,
-    KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                                          KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_CAPS, KC_TRNS,
-    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,      KC_NO,   KC_NO,   KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_INS,  KC_TRNS,
-                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
-  ),
-
-  // Number pad layer
-  [_NUM] = LAYOUT(
-    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9, KC_0,  KC_BSPC,
-    KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                                          KC_0,    KC_4,    KC_5,    KC_6, KC_NO, KC_TRNS,
-    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,      KC_NO,   KC_NO,   KC_0,    KC_1,    KC_2,    KC_3, KC_NO, KC_TRNS,
-                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
   // Adjustment layer
