@@ -8,6 +8,7 @@ enum layers {
   _WIN,
   _NAV,
   _SYM,
+  _GAME,
   _ADJ,
 };
 
@@ -22,6 +23,7 @@ enum layers {
 #define HR_S LALT_T(KC_S)
 #define HR_D LGUI_T(KC_D)
 #define HR_F LSFT_T(KC_F)
+#define HR_G LSFT_T(KC_F)
 
 // Right-hand home row mods (MacOS)
 #define HR_J RSFT_T(KC_J)
@@ -74,8 +76,7 @@ void td_nums_finished(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
     layer_invert(_NAV);
   } else if (state->count == 2) {
-    // Leaving the logic here in case we change our mind and want
-    // a numpad layer in the future again.
+    // Leaving the logic here in Potentially have a separate
     layer_invert(_NAV);
   }
 }
@@ -156,17 +157,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_WIN] = LAYOUT(
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,
-    KC_TRNS, HRW_A,   HRW_S,   HRW_D,   HRW_F,   KC_TRNS,                                     KC_TRNS, HRW_J,   HRW_K,   HRW_L,   HRW_SCLN, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,
-                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,
+    KC_TRNS, HRW_A,   HRW_S,   HRW_D,   HRW_F,   KC_TRNS,                                       KC_TRNS, HRW_J,   HRW_K,   HRW_L,   HRW_SCLN, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,
+                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
   // Navigation layer
   [_NAV] = LAYOUT(
-    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9,     KC_0,    KC_BSPC,
-    KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                                          KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_PGDN, KC_PGUP,
-    KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,   KC_NO,   KC_NO,      KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9,     KC_0,    KC_TRNS,
+    KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_COMM,                                        KC_DOT,  KC_RSFT, KC_RGUI, KC_RALT,  KC_RCTL, KC_TRNS,
+    KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_NO,   KC_NO,      KC_NO,   KC_NO,   KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,
                                KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
@@ -178,11 +179,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                          KC_TRNS,    KC_TRNS,        KC_TRNS,   KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
+  // Gaming layer
+  [_GAME] = LAYOUT
+    KC_TAB,  KC_Q, KC_W, KC_E,    KC_R,    KC_T,                                           KC_Y,     KC_U,  KC_I,    KC_O,   KC_P,    KC_BSPC,
+    KC_ESC,  KC_A, KC_S, KC_D,    KC_F,    KC_G,                                           KC_H,     KC_J,  KC_K,    KC_L,   HR_SCLN, KC_QUOT,
+    KC_LSFT, KC_Z, KC_X, KC_C,    KC_V,    KC_B,    KC_NO,  KC_NO,       KC_NO,   KC_NO,   KC_N,     KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+  ),
+
   // Adjustment layer
   [_ADJ] = LAYOUT(
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                     PDF(_BASE), PDF(_WIN), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                     RM_TOGG,    RM_SATU,   RM_HUEU, RM_VALU, RM_NEXT, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    RM_SATD,   RM_HUED, RM_VALD, RM_PREV, KC_TRNS,
-                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS,   KC_TRNS
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                       PDF(_BASE), PDF(_WIN), PDF(_GAME), KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                       RM_TOGG,    RM_SATU,   RM_HUEU,    RM_VALU, RM_NEXT, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS,    RM_SATD,   RM_HUED,    RM_VALD, RM_PREV, KC_TRNS,
+                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS,   KC_TRNS
   ),
 };
