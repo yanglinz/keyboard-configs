@@ -6,7 +6,7 @@
 enum layers {
   _BASE = 0,
   _WIN,
-  _NAV,
+  _NUM,
   _SYM,
   _GAME,
   _ADJ,
@@ -74,10 +74,10 @@ void td_caps_finished(tap_dance_state_t *state, void *user_data) {
 
 void td_nums_finished(tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    layer_invert(_NAV);
+    layer_invert(_NUM);
   } else if (state->count == 2) {
     // Leaving the logic here in Potentially have a separate
-    layer_invert(_NAV);
+    layer_invert(_NUM);
   }
 }
 
@@ -134,7 +134,7 @@ bool rgb_matrix_indicators_user(void) {
   case _BASE:
   case _WIN:
   case _SYM:
-  case _NAV:
+  case _NUM:
   default:
     rgb_matrix_sethsv(0, 0, 0);
     rgb_matrix_set_color_all(0, 0, 0); // off
@@ -153,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q, KC_W, KC_E,     KC_R,  KC_T,                                                 KC_Y,     KC_U,  KC_I,    KC_O,   KC_P,    KC_BSPC,
     KC_ESC,  HR_A, HR_S, HR_D,     HR_F,  KC_G,                                                 KC_H,     HR_J,  HR_K,    HR_L,   HR_SCLN, KC_QUOT,
     KC_LSFT, KC_Z, KC_X, KC_C,     KC_V,  KC_B,     KC_NO,  KC_NO,         KC_NO,       KC_NO,  KC_N,     KC_M,  KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
-                         MO(_ADJ), KC_NO, MO(_NAV), KC_SPC, TD(TD_NUM),    TD(TD_CAPS), KC_ENT, MO(_SYM), KC_NO, TO(_BASE)
+                         MO(_ADJ), KC_NO, MO(_NUM), KC_SPC, TD(TD_NUM),    TD(TD_CAPS), KC_ENT, MO(_SYM), KC_NO, TO(_BASE)
   ),
 
   [_WIN] = LAYOUT(
@@ -164,7 +164,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   // Navigation layer
-  [_NAV] = LAYOUT(
+  [_NUM] = LAYOUT(
     KC_TRNS, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                                           KC_6,    KC_7,    KC_8,    KC_9,     KC_0,    KC_TRNS,
     KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_COMM,                                        KC_DOT,  KC_RSFT, KC_RGUI, KC_RALT,  KC_RCTL, KC_TRNS,
     KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_NO,   KC_NO,      KC_NO,   KC_NO,   KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,
