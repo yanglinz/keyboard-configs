@@ -1,5 +1,8 @@
 #include QMK_KEYBOARD_H
 
+// Some inspirations from:
+// - https://github.com/mmccoyd/hillside/tree/main/hillside46
+
 enum layers {
   _BASE = 0,
   _WIN,
