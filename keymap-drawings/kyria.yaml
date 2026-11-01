@@ -55,7 +55,7 @@ layers:
     - ''
   - - MO( NUM)
     - SPC
-    - MO( NAV)
+    - TD(TD NUM)
     - TD(TD CAPS)
     - ENT
     - MO( SYM)
@@ -294,8 +294,7 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-    - t: "\u25BD"
-      type: trans
+    - MO( NAV)
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
@@ -354,8 +353,7 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  - - t: "\u25BD"
-      type: trans
+  - - MO( NAV)
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
