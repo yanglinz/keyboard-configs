@@ -53,9 +53,9 @@ layers:
     - RSFT
     - MO( ADJ)
     - ''
-  - - MO( NAV)
+  - - MO( NUM)
     - SPC
-    - TD(TD NUM)
+    - MO( NAV)
     - TD(TD CAPS)
     - ENT
     - MO( SYM)
@@ -163,6 +163,144 @@ layers:
     - t: "\u25BD"
       type: trans
   L2:
+  - - TAB
+    - Q
+    - W
+    - E
+    - R
+    - T
+    - Y
+    - U
+    - I
+    - O
+    - P
+    - BSPC
+    - ESC
+    - A
+  - - S
+    - D
+    - F
+    - G
+    - H
+    - J
+    - K
+    - L
+    - ;
+    - ''''
+    - LSFT
+    - Z
+    - X
+    - C
+  - - V
+    - B
+    - ''
+    - ''
+    - ''
+    - ''
+    - N
+    - M
+    - ','
+    - .
+    - /
+    - RSFT
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  L3:
+  - - t: "\u25BD"
+      type: trans
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '0'
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - LCTL
+  - - LALT
+    - LGUI
+    - LSFT
+    - ','
+    - .
+    - RSFT
+    - RGUI
+    - RALT
+    - RCTL
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - ''
+    - ''
+    - ''
+    - ''
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  - - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+    - t: "\u25BD"
+      type: trans
+  L4:
   - - t: "\u25BD"
       type: trans
     - '`'
@@ -232,20 +370,20 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  L3:
+  L5:
   - - t: "\u25BD"
       type: trans
-    - '1'
-    - '2'
-    - '3'
-    - '4'
-    - '5'
-    - '6'
-    - '7'
-    - '8'
-    - '9'
-    - '0'
-    - BSPC
+    - F1
+    - F2
+    - F3
+    - F4
+    - F5
+    - F6
+    - F7
+    - F8
+    - F9
+    - F10
+    - F11
     - t: "\u25BD"
       type: trans
     - LCTL
@@ -298,73 +436,7 @@ layers:
       type: trans
     - t: "\u25BD"
       type: trans
-  L4:
-  - - t: "\u25BD"
-      type: trans
-    - '1'
-    - '2'
-    - '3'
-    - '4'
-    - '5'
-    - '6'
-    - '7'
-    - '8'
-    - '9'
-    - '0'
-    - BSPC
-    - t: "\u25BD"
-      type: trans
-    - LCTL
-  - - LALT
-    - LGUI
-    - LSFT
-    - ''
-    - '0'
-    - '4'
-    - '5'
-    - '6'
-    - ''
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
-    - ''
-    - ''
-    - ''
-  - - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - ''
-    - '0'
-    - '1'
-    - '2'
-    - '3'
-    - ''
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
-  - - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
-    - t: "\u25BD"
-      type: trans
-  L5:
+  L6:
   - - t: "\u25BD"
       type: trans
     - t: "\u25BD"
@@ -379,8 +451,7 @@ layers:
       type: trans
     - PDF( BASE)
     - PDF( WIN)
-    - t: "\u25BD"
-      type: trans
+    - PDF( GAME)
     - t: "\u25BD"
       type: trans
     - t: "\u25BD"
