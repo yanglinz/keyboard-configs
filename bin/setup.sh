@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-QMK_FIRMWARE_REF="0.31.9"
+QMK_FIRMWARE_REF="0.34.6"
 
 function setup_qmk_repo() {
   git clone git@github.com:qmk/qmk_firmware.git

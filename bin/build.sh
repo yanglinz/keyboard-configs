@@ -14,12 +14,18 @@ function copy_source() {
 
 function compile() {
   cd qmk_firmware
-  # TODO: add logic to compare diff against master
-  # util/docker_build.sh splitkb/halcyon/kyria/rev4:default
-  util/docker_build.sh silakka54:default
+
+  util/docker_build.sh splitkb/halcyon/kyria/rev4:default
+  # util/docker_build.sh silakka54:default
   cd -
+}
+
+function copy_out() {
+  mkdir -p out
+  cp qmk_firmware/*.uf2 out/
 }
 
 ./bin/keymap-gen.sh
 copy_source
 compile
+copy_out
